@@ -10,7 +10,7 @@
     outPrompt: .asciz "Enter a number: "
     outResult: .asciz "%d + 32 = %d\n"
 .section .bss //variable un-init
-result .word
+
 .text //the code starts here
 main:
     //keep track of where i came from
