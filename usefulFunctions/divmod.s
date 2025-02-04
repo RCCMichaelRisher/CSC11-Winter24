@@ -62,13 +62,10 @@ endWhile2: //}
     bal while1
 endWhile1: //}
     //Output the results
-    //move the values around 
-    mov r6, r0          //move rmod to safe register
-    mov r7, r1          //mov rdiv to safe register
-
-    push {r0}
-    mov r0, r1
-    pop {r1}
+    //move the values around so div is in r0 and mod in r1
+    mov r2, r1
+    mov r1, r0
+    mov r0, r2
 
     pop {r4-r12}
     pop {pc}
