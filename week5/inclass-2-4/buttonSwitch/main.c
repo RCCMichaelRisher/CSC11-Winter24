@@ -25,7 +25,7 @@ int main(){
         if( currentBtnState == 1 && prevBtnState == 0 ){
             printf( "pressed the button\n" );
             ledState = !ledState;
-            digitalWrite( PIN_LED, HIGH );
+            digitalWrite( PIN_LED, ledState );
         }
 
         //update my button state for next tick
