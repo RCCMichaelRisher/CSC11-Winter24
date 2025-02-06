@@ -49,7 +49,7 @@ main:
 
 //bubbleSort( *a, n)
 bubbleSort:
-    stmdb sp!, {lr}
+    stmdb sp!, {r4-r7,lr}
     sub r1, r1, #1          @ int x = n - 1;
     mov r2, #0              //int i = 0
     bsForOut:               @ for( int i = 0; i < x; i++ ){
@@ -81,13 +81,13 @@ bubbleSort:
         add r2, r2, #1 //i++
         bal bsForOut@ }
     bsEndOut:
-    ldmia sp!, {pc}
+    ldmia sp!, {r4-r7,pc}
 //end
 
 
 //input(*a, n)
 input:
-    stmdb sp!, {lr}
+    stmdb sp!, {r4-r6,lr}
     mov r4, #0 //i = 0
     mov r5, r0 //move array & len to "safe" registers
     mov r6, r1
